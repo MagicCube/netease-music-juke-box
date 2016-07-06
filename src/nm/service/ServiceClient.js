@@ -46,3 +46,14 @@ export default class ServiceClient
         });
     }
 }
+
+
+let __instance = null;
+ServiceClient.getInstance = function()
+{
+    if (__instance === null)
+    {
+        __instance = new ServiceClient();
+    }
+    return __instance;
+};
