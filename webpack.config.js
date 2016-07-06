@@ -1,3 +1,5 @@
+"use strict";
+
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -21,9 +23,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: "node_modules/",
-                loaders: [
-                    "babel-loader?sourceRoot=./src"
-                ]
+                loader: "babel-loader"
             },
             {
                 test: /\.less$/,
