@@ -20,7 +20,7 @@ export default class Application extends View
     init()
     {
         super.init();
-        this.addStyleClass("nju-application");
+        this.addStyleClass("nju-app");
     }
 
     run()
