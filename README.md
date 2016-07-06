@@ -9,6 +9,7 @@
 
 * HTML 5 / CSS 3
 * Webpack
+* Gulp
 * ES6 / ES7 / ES2015
 * Babel
 * jQuery
@@ -34,8 +35,23 @@ $ npm install
 
 
 
+## 如何通过 Gulp 构建
+```shell
+$ gulp
+```
 
-## 如何运行
+
+
+
+## 如何通过 Gulp 运行（推荐）
+```shell
+$ gulp dev
+```
+
+
+
+
+## 如何手动运行
 
 ### 1. 确保已安装 webpack-dev-server
 
@@ -47,20 +63,6 @@ $ npm install -g webpack-dev-server
 
 ```shell
 $ webpack-dev-server
-```
-
-### 3. 启动浏览器（需允许跨域）
-
-**Mac OS X**
-
-```shell
-open -a Google\ Chrome --args --disable-web-security --user-data-dir
-```
-
-**Windows**
-
-```
-"C:\Program Files\Google\Chrome\Application\chrome.exe" --args --disable-web-security --user-data-dir
 ```
 
 ### 4. 在浏览器中访问 http://localhost:8080

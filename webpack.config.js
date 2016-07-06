@@ -5,7 +5,7 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    context: path.resolve(__dirname, "./src"),
+    context: path.resolve("./src"),
 
     entry: {
         vendor: [ "jquery" ],
@@ -13,8 +13,8 @@ module.exports = {
     },
 
     output: {
-        path: "./assets",
-        publicPath: "assets",
+        path: path.resolve("./assets"),
+        publicPath: "/assets",
         filename: "[name]/bundle.js"
     },
 
@@ -43,5 +43,16 @@ module.exports = {
             minChunks: Infinity
         }),
         new ExtractTextPlugin("./[name]/resource/bundle.css")
-    ]
+    ],
+
+    devServer:
+    {
+        proxy: {
+            "/api/*": {
+                target: "http://music.163.com/",
+                host: "music.163.com",
+                secure: false
+            }
+        }
+    }
 };
