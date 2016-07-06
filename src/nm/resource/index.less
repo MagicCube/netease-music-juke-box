@@ -14,8 +14,16 @@ html, body
 
     > header
     {
+        display: flex;
+        align-items: center;
         height: @nm-app-header-height;
+        color: white;
         background: @nm-app-color;
+
+        > h1
+        {
+            margin-left: 20px;
+        }
     }
 
     > main
@@ -26,12 +34,15 @@ html, body
         > aside
         {
             width: @nm-app-sidebar-width;
+            background: @nm-app-darker-bg;
             border-right: 1px solid @nm-separator-color;
+            overflow-y: auto;
         }
 
         > section.content
         {
             flex-grow: 1;
+            overflow-y: auto;
         }
     }
 
@@ -39,5 +50,6 @@ html, body
     {
         height: @nm-app-footer-height;
         border-top: 1px solid @nm-separator-color;
+        background: @nm-app-darker-bg;
     }
 }
