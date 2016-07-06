@@ -3,6 +3,8 @@
 
 
 
+
+
 ## 技术概览
 
 * HTML 5 / CSS 3
@@ -15,6 +17,10 @@
 
 
 
+
+
+
+
 ## 如何安装
 
 本项目可以直接通过 npm 安装依赖。
@@ -24,6 +30,8 @@ $ git clone https://github.com/MagicCube/netease-music-juke-box.git
 $ cd netease-music-juke-box
 $ npm install
 ```
+
+
 
 
 
@@ -41,7 +49,7 @@ $ npm install -g webpack-dev-server
 $ webpack-dev-server
 ```
 
-### 3. 打开浏览器（需允许跨域）
+### 3. 启动浏览器（需允许跨域）
 
 **Mac OS X**
 
@@ -55,3 +63,4 @@ open -a Google\ Chrome --args --disable-web-security --user-data-dir
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --args --disable-web-security --user-data-dir
 ```
 
+### 4. 在浏览器中访问 http://localhost:8080
