@@ -1,0 +1,58 @@
+html, body
+{
+    width: 100%;
+    height: 100%;
+}
+
+.nm-app
+{
+    display: flex;
+    flex-direction: column;
+
+    > header, > footer, > main > .content, > main > .sidebar
+    {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    > header
+    {
+        display: flex;
+        align-items: center;
+        height: @nm-app-header-height;
+        color: white;
+        background: @nm-app-color;
+
+        > h1
+        {
+            margin-left: 20px;
+        }
+    }
+
+    > main
+    {
+        display: flex;
+        flex-grow: 1;
+
+        > aside.sidebar
+        {
+            width: @nm-app-sidebar-width;
+            background: @nm-app-darker-bg;
+            border-right: 1px solid @nm-separator-color;
+            overflow-y: auto;
+        }
+
+        > section.content
+        {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+    }
+
+    > footer
+    {
+        height: @nm-app-footer-height;
+        border-top: 1px solid @nm-separator-color;
+        background: @nm-app-darker-bg;
+    }
+}
