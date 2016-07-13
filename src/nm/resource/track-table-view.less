@@ -1,4 +1,46 @@
 .nm-track-table-view
 {
-    
+    width: 100%;
+
+    tr
+    {
+        height: @nm-list-item-height;
+
+        td
+        {
+            padding-left: 8px;
+            padding-right: 8px;
+            white-space: nowrap;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    thead
+    {
+        tr
+        {
+            border-bottom: 1px solid @nm-separator-color;
+
+            td:not(:first-child)
+            {
+                border-left: 1px solid @nm-separator-color;
+            }
+
+            .album
+            {
+                width: 320px;
+            }
+
+            .artists
+            {
+                width: 200px;
+            }
+
+            .play-time
+            {
+                width: 80px;
+            }
+        }
+    }
 }
