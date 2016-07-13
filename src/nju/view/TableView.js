@@ -7,8 +7,6 @@ export default class TableView extends ListView
         super.init();
         this.removeStyleClass("nju-list-view");
         this.addStyleClass("nju-table-view");
-
-        this._initLayout();
     }
 
     _initLayout()
