@@ -5,7 +5,7 @@ export default class TrackTableView extends TableView
     init()
     {
         super.init();
-        this.addStyleClass("nm-track-table-view");
+        this.addStyleClass("nm-track-table-view striped");
     }
 
     $createNewItem()
