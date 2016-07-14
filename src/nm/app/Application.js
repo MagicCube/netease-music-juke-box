@@ -1,6 +1,8 @@
 import NJUApplication from "../../nju/app/Application";
 
 import PlayListView from "../view/PlayListView";
+import TrackTableView from "../view/TrackTableView";
+import PlayerView from "../view/PlayerView";
 
 export default class Application extends NJUApplication
 {
@@ -10,6 +12,8 @@ export default class Application extends NJUApplication
         this.addStyleClass("nm-app");
         this._initLayout();
         this._initPlayListView();
+        this._initTrackTableView();
+        this._initPlayerView();
     }
 
     _initLayout()
@@ -17,7 +21,7 @@ export default class Application extends NJUApplication
         this.$element.append(`
             <header><h1>网易云音乐</h1></header>
             <main>
-                <aside></aside>
+                <aside class="sidebar"></aside>
                 <section class="content"></section>
             </main>
             <footer></footer>`);
@@ -26,11 +30,18 @@ export default class Application extends NJUApplication
     _initPlayListView()
     {
         this.playListView = new PlayListView("play-list");
-        this.addSubview(this.playListView, this.$("> main > aside"));
+        this.addSubview(this.playListView, this.$("> main > aside.sidebar"));
     }
 
-    run()
+    _initTrackTableView()
     {
-        console.log("Netease Music WebApp is now running...");
+        this.trackTableView = new TrackTableView("track-table");
+        this.addSubview(this.trackTableView, this.$("> main > section.content"));
+    }
+
+    _initPlayerView()
+    {
+        this.playerView = new PlayerView("player");
+        this.addSubview(this.playerView, this.$("> footer"));
     }
 }
