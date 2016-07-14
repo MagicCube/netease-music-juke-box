@@ -111,13 +111,15 @@ export default class ListView extends View
             this._selection = null;
         }
 
-        this._selection = item
+        this._selection = item;
 
         if (item)
         {
             const $item = this.$getItem(item);
             $item.addClass("selected");
         }
+
+        this.trigger("selectionchanged");
     }
 
 
