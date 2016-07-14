@@ -51,6 +51,11 @@ export default class ListView extends View
         this.selectItem(value);
     }
 
+    get selectedId()
+    {
+        return this.getIdOfItem(this.selection);
+    }
+
 
     getTypeOfItem(item)
     {
@@ -58,12 +63,20 @@ export default class ListView extends View
     }
     getIdOfItem(item)
     {
-        return item.id;
+        if (item)
+        {
+            return item.id;
+        }
+        else
+        {
+            return null;
+        }
     }
 
 
     clearItems()
     {
+        this.selection = null;
         if (this.items !== null)
         {
             if (this.items.length > 0)
