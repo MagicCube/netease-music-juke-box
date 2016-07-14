@@ -4,8 +4,6 @@ import PlayListView from "../view/PlayListView";
 import TrackTableView from "../view/TrackTableView";
 import PlayerView from "../view/PlayerView";
 
-import ServiceClient from "../service/ServiceClient";
-
 export default class Application extends NJUApplication
 {
     init()
@@ -45,15 +43,5 @@ export default class Application extends NJUApplication
     {
         this.playerView = new PlayerView("player");
         this.addSubview(this.playerView, this.$("> footer"));
-    }
-
-    async run()
-    {
-        await ServiceClient.getInstance().login();
-        this.playListView.items = await ServiceClient.getInstance().getUserPlayLists();
-        this.playListView.selection = this.playListView.items[0];
-
-        const playlist = await ServiceClient.getInstance().getPlayListDetail(this.playListView.items[0].id);
-        this.trackTableView.items = playlist.tracks;
     }
 }
