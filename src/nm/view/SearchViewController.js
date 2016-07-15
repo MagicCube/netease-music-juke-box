@@ -28,12 +28,12 @@ export default class SearchViewController extends ViewController
             const tracks = await ServiceClient.getInstance().search(keyword, true);
             this.suggestionListView.items = tracks;
         }
-        this.view.toggleSuggestion(keyword && tracks && tracks.length > 0);
+        this.view.toggleSuggestion(this.view.text && this.suggestionListView.items && this.suggestionListView.items.length > 0);
     }
 
     _onfocus(e)
     {
-        this.view.toggleSuggestion(this.suggestionListView.items && this.suggestionListView.items.length > 0);
+        this.view.toggleSuggestion(this.view.text && this.suggestionListView.items && this.suggestionListView.items.length > 0);
     }
 
     _onblur(e)
