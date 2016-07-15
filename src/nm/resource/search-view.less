@@ -1,7 +1,11 @@
 .nm-search-view
 {
+    @nm-search-view-width: 240px;
+    @nm-search-view-height: 24px;
+
+    position: relative;
     background: white;
-    height: 24px;
+    height: @nm-search-view-height;
     padding-left: 6px;
     padding-right: 12px;
     padding-top: 4px;
@@ -18,6 +22,32 @@
     {
         background: transparent;
         border: none;
-        width: 240px;
+        width: @nm-search-view-width;
+    }
+
+    #suggestion-list
+    {
+        position: absolute;
+        background: @body-bg;
+        top: @nm-search-view-height + 5;
+        left: 0;
+        right: 0;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        z-index: 999999;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+        li
+        {
+            height: @nm-list-item-height;
+            line-height: @nm-list-item-height;
+            padding-left: 29px;
+            padding-right: 12px;
+
+            &:hover
+            {
+                background: #efefef;
+            }
+        }
     }
 }
