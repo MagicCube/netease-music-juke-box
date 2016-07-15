@@ -12,7 +12,7 @@ export default class PlayListView extends ListView
     {
         const $li = super.$createNewItem();
         $li.append(`
-            <span class="icon"></span>
+            <span class="icon iconfont icon-play-list"></span>
             <span class="text"></span>
         `);
         return $li;
