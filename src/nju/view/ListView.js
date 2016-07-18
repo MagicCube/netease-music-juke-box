@@ -154,6 +154,16 @@ export default class ListView extends View
         this.trigger("selectionchanged");
     }
 
+    showSelection()
+    {
+        this.removeStyleClass("hide-selection");
+    }
+
+    hideSelection()
+    {
+        this.addStyleClass("hide-selection");
+    }
+
 
 
 
