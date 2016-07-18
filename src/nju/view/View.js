@@ -2,12 +2,6 @@ import ManagedObject from "../base/ManagedObject";
 
 export default class View extends ManagedObject
 {
-    constructor(id, controller = null)
-    {
-        super(id);
-        this._controller = controller;
-    }
-
     init()
     {
         super.init();
@@ -23,11 +17,6 @@ export default class View extends ManagedObject
     getElementTag()
     {
         return "div";
-    }
-
-    get controller()
-    {
-        return this._controller;
     }
 
     get subviews()
