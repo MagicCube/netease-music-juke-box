@@ -1,4 +1,4 @@
-import ViewController from "../../nju/view/ViewController";
+import ViewController from "nju/view/ViewController";
 import SearchView from "./SearchView";
 import ServiceClient from "../service/ServiceClient";
 

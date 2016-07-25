@@ -1,4 +1,4 @@
-import NJUApplication from "../../nju/app/Application";
+import NJUApplication from "nju/app/Application";
 
 import PlayerView from "../view/PlayerView";
 import PlayListView from "../view/PlayListView";

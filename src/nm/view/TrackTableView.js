@@ -1,4 +1,4 @@
-import TableView from "../../nju/view/TableView";
+import TableView from "nju/view/TableView";
 
 import TimeUtil from "../util/TimeUtil";
 

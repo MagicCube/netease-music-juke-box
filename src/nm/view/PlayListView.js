@@ -1,4 +1,4 @@
-import ListView from "../../nju/view/ListView";
+import ListView from "nju/view/ListView";
 
 export default class PlayListView extends ListView
 {

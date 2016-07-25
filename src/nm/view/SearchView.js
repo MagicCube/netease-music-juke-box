@@ -1,6 +1,6 @@
-import View from "../../nju/view/View";
+import View from "nju/view/View";
 
-import ListView from "../../nju/view/ListView";
+import ListView from "nju/view/ListView";
 
 export default class SearchView extends View
 {
