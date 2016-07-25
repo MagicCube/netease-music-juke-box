@@ -1,4 +1,4 @@
-import TableView from "../../nju/view/TableView";
+import TableView from "nju/view/TableView";
 
 import TimeUtil from "../util/TimeUtil";
 
@@ -8,6 +8,10 @@ export default class TrackTableView extends TableView
     {
         super.init();
         this.addStyleClass("nm-track-table-view striped");
+
+        this.$container.on("dblclick", this.getItemElementTag(), () => {
+            this.trigger("itemdblclick");
+        });
     }
 
     $createNewItem()
@@ -27,7 +31,16 @@ export default class TrackTableView extends TableView
         $item.children(".name").text(item.name);
         $item.children(".artists").text(item.artists.map(artist => artist.name).join(", "));
         $item.children(".album").text(item.album.name);
-        $item.children(".play-time").text(TimeUtil.formatPlayTime(item.lMusic.playTime));
+        let duration = 0;
+        if (item.lMusic)
+        {
+            duration = item.lMusic.playTime
+        }
+        else
+        {
+            duration = item.duration;
+        }
+        $item.children(".play-time").text(TimeUtil.formatPlayTime(duration));
     }
 
     renderHeadItem($headItem)

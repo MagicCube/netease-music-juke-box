@@ -12,7 +12,7 @@ export default class ListView extends View
 
         this._initLayout();
 
-        this.$container.on("click", this.getItemElementTag(), this._onclick.bind(this));
+        this.$container.on("mousedown", this.getItemElementTag(), this._onclick.bind(this));
     }
 
     _initLayout()
@@ -54,6 +54,25 @@ export default class ListView extends View
     get selectedId()
     {
         return this.getIdOfItem(this.selection);
+    }
+    set selectedId(value = null)
+    {
+        if (value === null)
+        {
+            this.selection = null;
+        }
+        else
+        {
+            const $item = this.$getItem(value);
+            if ($item.length > 0)
+            {
+                const item = $item.data("item");
+                if (item)
+                {
+                    this.selection = item;
+                }
+            }
+        }
     }
 
 
@@ -135,6 +154,16 @@ export default class ListView extends View
         this.trigger("selectionchanged");
     }
 
+    showSelection()
+    {
+        this.removeStyleClass("hide-selection");
+    }
+
+    hideSelection()
+    {
+        this.addStyleClass("hide-selection");
+    }
+
 
 
 
@@ -172,6 +201,7 @@ export default class ListView extends View
     {
         const $item = $(e.currentTarget);
         const item = $item.data("item");
+        this.trigger("itemclick", { item });
         this.selectItem(item);
     }
 }

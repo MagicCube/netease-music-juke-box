@@ -45,13 +45,23 @@ module.exports = {
         new ExtractTextPlugin("./[name]/resource/bundle.css")
     ],
 
+    resolve: {
+        root: path.resolve("./src/"),
+        alias: {
+            nju: path.resolve("./src/nju")
+        }
+    },
+
     devServer:
     {
         proxy: {
             "/api/*": {
                 target: "http://music.163.com/",
                 host: "music.163.com",
-                secure: false
+                secure: false,
+                headers: {
+                    "Referer": "http://music.163.com"
+                }
             }
         }
     }
